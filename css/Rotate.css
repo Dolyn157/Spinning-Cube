@@ -1,0 +1,83 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+body {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.TheBox {
+    position: absolute;
+    left: 350px;
+    width: 250px;
+    height: 250px;
+    border: 0px solid #000;
+    margin: 150px auto;
+    /* 让子元素保持3d效果 */
+    transform-style: preserve-3d;
+
+    /* 调整盒子本身的角度方便观察 */
+    transform: rotateX(30deg) rotateY(40deg);
+
+    /* 过渡*/
+    animation: myrotate 6s linear infinite;
+    /* transition: transform 6s; */
+    user-select: none;
+    }
+
+    @keyframes myrotate {
+        0%{
+            transform: rotateX(-90deg) rotateY(-270deg) rotateZ(-180deg);
+        }
+
+        100%{
+            transform: rotateX(270deg) rotateY(90deg) rotateZ(180deg);
+        }
+    }
+
+.TheBox > div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 250px;
+    font-size: 50px;
+}
+.left {
+    background-color: rgba(124, 77, 255, .5);
+    transform: translateX(-125px) rotateY(90deg);
+    box-shadow: 0 0 100px 10px rgba(124, 77, 255, .5);
+}
+.right {
+    background-color: rgba(194, 24, 91, .5);
+    transform: translateX(125px) rotateY(90deg);
+    box-shadow: 0 0 100px 10px rgba(194, 24, 91, .5);
+}
+.up {
+    background-color: rgba(68, 138, 255, .5);
+    transform: translateY(-125px) rotateX(90deg);
+box-shadow: 0 0 100px 10px rgba(68, 138, 255, .5);
+}
+.down {
+    background-color: rgba(76, 175, 80, .5);
+    transform: translateY(125px) rotateX(90deg);
+    box-shadow: 0 0 100px 10px rgba(76, 175, 80, .5);
+}
+.front {
+    background-color: rgba(224, 64, 251, .5);
+    transform: translateZ(-125px);
+    box-shadow: 0 0 100px 10px rgba(224, 64, 251, .5);
+}
+.back {
+    background-color: rgba(255, 235, 59, .5);
+    transform: translateZ(125px);
+    box-shadow: 0 0 100px 10px rgba(255, 235, 59, .5);
+}
